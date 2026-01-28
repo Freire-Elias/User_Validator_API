@@ -1,15 +1,10 @@
-import users
-from users import receber_user, validar_user
+from users import *
+from fastapi import FastAPI
 
-user = receber_user()
-print(validar_user(user))
-# from fastapi import FastAPI
-#
-# app = FastAPI()
-#
-# @app.get("/")
-# def home():
-#     return {
-#         id:0
-#         email:"baka"
-#     }
+#Rota de verificação de dados
+app = FastAPI()
+
+@app.post("/login")
+def login(dados: User):
+    return {"Válido": True}
+
